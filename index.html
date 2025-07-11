@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Quantico">
+    <link rel="stylesheet" href="./index.css">
+    <title>Librarium Asynchronous</title>
+  </head>
+  <body>
+    <div id="main-content">
+      <div class="pane">
+        <h1>Librarium Asynchronous</h1>
+      </div>
+      <div class="pane">
+        <h2>Current Book</h2>
+        <p id="book-title"></p>
+        <p id="book-author"></p>
+        <div id="book-links">
+          <a target="_blank" rel="noopener noreferrer" class="book-link">Goodreads Link</a>
+          <a target="_blank" rel="noopener noreferrer" class="book-link">Storygraph Link</a>
+        </div>
+        <hr/>
+        <h2>Timeline</h2>
+        <div id="timeline">
+          <div class="due-date">
+            <p>Acquire by:</p><p></p>
+          </div>
+          <div class="due-date">
+            <p>Read by:</p><p></p>
+          </div>
+          <div class="due-date">
+            <p>Discuss by:</p><p></p>
+          </div>
+        </div>
+        <div id="progress-bars"></div>
+      </div>
+      <div class="pane">
+        <h2>Current Links</h2>
+        <div id="link-columns">
+          <a target="_blank" rel="noopener noreferrer">Record your thoughts form</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/spreadsheets/d/1xQKTwyH4_CL3dW91-s6E9tJxiAzfMeS7E2hpeqRlrSc/edit?usp=sharing">Suggestions spreadsheet</a>
+        </div>
+      </div>
+      <div class="pane">
+        <h2>History / Past Books</h2>
+      </div>
+    </div>
+    <script src="./book-data.js"></script>
+    <script src="./populate.js"></script>
+    <script src="./progress-bars.js"></script>
+  </body>
+</html>

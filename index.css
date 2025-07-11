@@ -1,0 +1,182 @@
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: #364652;
+}
+
+h1, h2 {
+  color: #C7DBE6;
+  text-align: center;
+}
+
+h2 {
+  margin: 8px 0;
+}
+
+p, hr, div {
+  color: #C5CCD3;
+}
+
+a {
+  color: #B2C2A9;
+}
+
+h1 {
+  font-family: 'Audiowide', sans-serif;
+}
+
+h2, p, a, div {
+  font-family: 'Quantico', sans-serif;
+}
+
+a:visited {
+  color: #94AA88;
+}
+
+hr {
+  width: 95%;
+}
+
+#main-content {
+  width: 95vw;
+  margin: 0 auto;
+  padding-bottom: 16px;
+}
+
+@media (min-device-width: 400px) and (min-width: 700px) {
+  #main-content {
+    width: 50vw;
+    min-width: 500px;
+    /* TODO: max-width */
+  }
+}
+
+.pane {
+  border: 1px solid #C5CCD3;
+  border-radius: 16px;
+  margin-top: 16px;
+  padding: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#timeline, #book-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#book-title, #book-author {
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+}
+
+#book-title {
+  font-size: 32px;
+}
+
+#book-author {
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.due-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.due-date p {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-device-width: 400px) and (min-width: 700px) {
+  .due-date {
+    flex-direction: row;
+    column-gap: 4px;
+  }
+}
+
+#progress-bars, .single-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.single-progress-container p {
+  margin: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.progress-bar.current {
+  justify-content: flex-start;
+}
+
+.progress-bar > p {
+  flex-grow: 1;
+}
+
+.progress-bar:not(.past-due) {
+  position: relative;
+  border: 1px solid #C5CCD3;
+  border-radius: 8px;
+  height: 22px;
+}
+
+.empty-progress, .past-due, .progress-indicator, .progress-bar p {
+  text-align: center;
+  font-style: italic;
+  color: #B1B8BE;
+  font-size: 14px;
+}
+
+.progress-indicator {
+  height: 100%;
+
+  border-radius: 8px;
+  background: #C5CCD3;
+  box-shadow: inset 0 0 10px 6px #BAE2F7;
+  color: #364652;
+}
+
+@media (min-device-width: 400px) and (min-width: 700px) {
+  .single-progress-container {
+    flex-direction: row;
+  }
+
+  .single-progress-container > p {
+    width: 85px;
+  }
+}
+
+#link-columns {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-device-width: 400px) and (min-width: 700px) {
+  #link-columns {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 0 16px;
+  }
+
+  #link-columns a {
+    width: 50%;
+  }
+}
