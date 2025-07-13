@@ -33,3 +33,9 @@ const dueDateElems = document.querySelectorAll('.due-date p:last-child');
 dueDateElems[0].textContent = formatDisplayDueDate(acquireDueDate);
 dueDateElems[1].textContent = formatDisplayDueDate(readDueDate);
 dueDateElems[2].textContent = formatDisplayDueDate(discussDueDate);
+
+const bookLinkElems = document.querySelectorAll('#book-links .book-link');
+bookLinkElems[0].href = BOOK_DATA.goodreadsLink;
+bookLinkElems[1].href = BOOK_DATA.storygraphLink;
+
+document.getElementById('thoughts-form').href = BOOK_DATA.thoughtsFormLink;
