@@ -1,14 +1,3 @@
-document.getElementById('book-title').textContent = BOOK_DATA.title;
-document.getElementById('book-author').textContent = `by ${BOOK_DATA.author}`;
-
-function addWeeks(numWeeks, date) {
-  const daysToAdd = numWeeks * 7;
-  const newDate = new Date(date);
-
-  newDate.setDate(newDate.getDate() + daysToAdd);
-  return newDate;
-}
-
 /**
  * Creates a display date for the end of the current cycle (one day before start of next)
  * @param {Date} date the start date of the next cycle
@@ -22,20 +11,37 @@ function formatDisplayDueDate(date) {
   return `${displayDate.getMonth()+1}/${displayDate.getDate()}/${displayYear}`;
 }
 
-const now = new Date();
-const timezoneOffset = `-0${now.getTimezoneOffset()/60}:00`;
-const startDate = new Date(`${BOOK_DATA.startDate}T00:00:00.000${timezoneOffset}`);
-const acquireDueDate = addWeeks(1, startDate);
-const readDueDate = addWeeks(3, acquireDueDate);
-const discussDueDate = addWeeks(1, readDueDate);
+let startDate, acquireDueDate, readDueDate, discussDueDate;
 
-const dueDateElems = document.querySelectorAll('.due-date p:last-child');
-dueDateElems[0].textContent = formatDisplayDueDate(acquireDueDate);
-dueDateElems[1].textContent = formatDisplayDueDate(readDueDate);
-dueDateElems[2].textContent = formatDisplayDueDate(discussDueDate);
+if (BOOK_DATA) {
+  document.getElementById('book-title').textContent = BOOK_DATA.title;
+  document.getElementById('book-author').textContent = `by ${BOOK_DATA.author}`;
 
-const bookLinkElems = document.querySelectorAll('#book-links .book-link');
-bookLinkElems[0].href = BOOK_DATA.goodreadsLink;
-bookLinkElems[1].href = BOOK_DATA.storygraphLink;
+  startDate = new Date(`${BOOK_DATA.startDate}T00:00:00.000${TIMEZONE_OFFSET}`);
+  acquireDueDate = addWeeks(ACQUIRE_WEEKS, startDate);
+  readDueDate = addWeeks(READ_WEEKS, acquireDueDate);
+  discussDueDate = addWeeks(DISCUSS_WEEKS, readDueDate);
 
-document.getElementById('thoughts-form').href = BOOK_DATA.thoughtsFormLink;
+  const dueDateElems = document.querySelectorAll('.due-date p:last-child');
+  dueDateElems[0].textContent = formatDisplayDueDate(acquireDueDate);
+  dueDateElems[1].textContent = formatDisplayDueDate(readDueDate);
+  dueDateElems[2].textContent = formatDisplayDueDate(discussDueDate);
+
+  const bookLinkElems = document.querySelectorAll('#book-links .book-link');
+  bookLinkElems[0].href = BOOK_DATA.goodreadsLink;
+  bookLinkElems[1].href = BOOK_DATA.storygraphLink;
+
+  document.getElementById('thoughts-form').href = BOOK_DATA.thoughtsFormLink;
+} else {
+  document.getElementById('book-title').textContent = 'None selected';
+
+  document.querySelectorAll('.due-date p:last-child').forEach(elem => {
+    elem.textContent = 'TBD';
+  });
+
+  const bookLinkElems = document.querySelectorAll('#book-links .book-link');
+  bookLinkElems[0].href = 'https://www.goodreads.com/';
+  bookLinkElems[1].href = 'https://app.thestorygraph.com/';
+
+  document.getElementById('thoughts-form').remove();
+}

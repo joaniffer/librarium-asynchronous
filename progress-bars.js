@@ -65,6 +65,8 @@ function createProgressBar(startDate, endDate, label) {
   return singleProgress;
 }
 
-progressContainer.appendChild(createProgressBar(startDate, acquireDueDate, 'Acquire'));
-progressContainer.appendChild(createProgressBar(acquireDueDate, readDueDate, 'Read'));
-progressContainer.appendChild(createProgressBar(readDueDate, discussDueDate, 'Discuss'));
+if (BOOK_DATA) {
+  progressContainer.appendChild(createProgressBar(startDate, acquireDueDate, 'Acquire'));
+  progressContainer.appendChild(createProgressBar(acquireDueDate, readDueDate, 'Read'));
+  progressContainer.appendChild(createProgressBar(readDueDate, discussDueDate, 'Discuss'));
+}
