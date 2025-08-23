@@ -18,9 +18,9 @@ if (BOOK_DATA) {
   document.getElementById('book-author').textContent = `by ${BOOK_DATA.author}`;
 
   startDate = new Date(`${BOOK_DATA.startDate}T00:00:00.000${TIMEZONE_OFFSET}`);
-  acquireDueDate = addWeeks(ACQUIRE_WEEKS, startDate);
-  readDueDate = addWeeks(READ_WEEKS, acquireDueDate);
-  discussDueDate = addWeeks(DISCUSS_WEEKS, readDueDate);
+  acquireDueDate = addWeeks(BOOK_DATA.acquireWeeks, startDate);
+  readDueDate = addWeeks(BOOK_DATA.readWeeks, acquireDueDate);
+  discussDueDate = addWeeks(BOOK_DATA.discussWeeks, readDueDate);
 
   const dueDateElems = document.querySelectorAll('.due-date p:last-child');
   dueDateElems[0].textContent = formatDisplayDueDate(acquireDueDate);
