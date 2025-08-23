@@ -7,7 +7,10 @@ const BOOKS = [{
   thoughtsFormLink: 'https://forms.gle/sMZ6bQ5gKJnVDDnc7',
   acquireWeeks: 1,
   readWeeks: 4,
-  discussWeeks: 1
+  discussWeeks: 1,
+  averageRating: 3.25,
+  percentFirst: '40%',
+  percentSecond: '40%'
 },{
   title: 'Assassin\'s Apprentice',
   author: 'Robin Hobb',

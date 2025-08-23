@@ -1,0 +1,41 @@
+p {
+  margin: 4px 0;
+}
+
+.past-title, .past-author {
+  margin: 0;
+}
+
+.past-author {
+  font-style: italic;
+}
+
+.past-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.past-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-device-width: 400px) and (min-width: 700px) {
+  .past-name {
+    flex-direction: row;
+    align-items: baseline;
+    column-gap: 4px;
+    justify-content: center;
+  }
+}
+
+.rating {
+  text-align: center;
+}
+
+.votes, .links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
