@@ -17,7 +17,7 @@ const BOOKS = [{
   startDate: '2025-08-24',
   goodreadsLink: 'https://www.goodreads.com/book/show/77197.Assassin_s_Apprentice?from_search=true&from_srp=true&qid=1Hv0u3X11Y&rank=1',
   storygraphLink: 'https://app.thestorygraph.com/books/6521029d-f234-4a6c-b44c-f433359cdf21',
-  thoughtsFormLink: '',
+  thoughtsFormLink: 'https://forms.gle/QjUd5HVUsxgV3qCn8',
   acquireWeeks: 1,
   readWeeks: 4,
   discussWeeks: 1
