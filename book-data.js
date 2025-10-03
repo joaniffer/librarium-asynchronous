@@ -24,7 +24,7 @@ const BOOKS = [{
 },{
   title: 'The Library at Mount Char',
   author: 'Scott Hawkins',
-  startDate: '2025-10-5',
+  startDate: '2025-10-05',
   goodreadsLink: 'https://www.goodreads.com/book/show/26892110-the-library-at-mount-char',
   storygraphLink: 'https://app.thestorygraph.com/books/39b0522e-89fc-4e3c-8e79-f36080fcce27',
   thoughtsFormLink: '',
